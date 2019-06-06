@@ -1,7 +1,7 @@
 {
-  "name": "dzb openid demom client",
+  "name": "dzb-openid-demom-client",
   "version": "0.0.1",
-  "description": "Demo shows how you can use openid to fits the contect user with special needs to give him an optimal user expirence.",
+  "description": "Demo shows how you can use openid to fits the content user with special needs to give him an optimal user experience.",
   "keywords": [
     "openid",
     "accessibility",
