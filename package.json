@@ -1,0 +1,43 @@
+{
+  "name": "dzb openid demom client",
+  "version": "0.0.1",
+  "description": "Demo shows how you can use openid to fits the contect user with special needs to give him an optimal user expirence.",
+  "keywords": [
+    "openid",
+    "accessibility",
+    "blind",
+    "dyslexia",
+    "partially-sighted",
+    "dzb",
+    "social login"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=7"
+  },
+  "author": {
+    "name": "DZB developers",
+    "organization": "DZB",
+    "url": "https://dzb.de/",
+    "email": "lars.voigt@dzb.de"
+  },
+  "private": false,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "body-parser": "~1.17.1",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.3",
+    "dotenv": "^5.0.0",
+    "express": "~4.15.2",
+    "express-session": "^1.15.6",
+    "hbs": "~4.0.1",
+    "morgan": "~1.8.1",
+    "passport": "^0.4.0",
+    "passport-openid-connect": "^0.1.0",
+    "pm2": "^3.5.1",
+    "request": "^2.83.0",
+    "serve-favicon": "~2.4.2"
+  }
+}

@@ -1,0 +1,21 @@
+<a href="/users/profile">Profile</a> | <a href={{logout}}>Logout</a>
+<div class={{handicap}}>
+<h1>{{title}}</h1>
+<p><span class={{handicap}}>Hi</span> <span id="username"><b>{{username}}</b></span></p>
+<p class={{handicap}}>
+  This is a protected page so if you can see it then
+  you must have successfully authenticated via DZB openid. 🎉
+</p>
+<ul>
+  <li>
+    <p>
+      <span class={{handicap}}>Try the </span><a href="/users/profile">profile</a> <span class={{handicap}}> route to see the full profile for this user.</span>
+    </p>
+  </li>
+  <li>
+    <p>
+      Or <a href={{logout}}>logout</a> to destroy the local session.
+    </p>
+  </li>
+</ul>
+</div>
