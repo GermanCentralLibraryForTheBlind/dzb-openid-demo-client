@@ -27,7 +27,7 @@ rm *.js && rm package-lock.json
 #
 # copy sources to server
 #
-rsync -rtuv --exclude='node_modules/' --exclude='.git/' --exclude='.idea/' --exclude='package-lock.json'  -e "ssh -i $pem" *.* $host:$workpath
+rsync -rtuv --exclude='node_modules/' --exclude='.git/' --exclude='.idea/' --exclude='package-lock.json'  -e "ssh -i $pem" ./* $host:$workpath
 #
 # install new dependencies and restart backend service 
 #

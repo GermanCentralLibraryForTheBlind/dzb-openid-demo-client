@@ -20,17 +20,21 @@ router.get('/', function(req, res, next) {
 /* GET the profile of the current authenticated user */
 router.get('/profile', function(req, res, next) {
 
-  request.get('http://dzbvm-badi.dzbnet.local:5555/auth/realms/dzb/protocol/openid-connect/userinfo', {
+  request.get('http://192.168.1.195:5555/auth/realms/dzb/protocol/openid-connect/userinfo', {
     'auth': { 'bearer': req.user.token.access_token }
   }, (err, respose, body) => {
 
     console.log('User Info');
     console.log(body);
+    user = JSON.parse(body);
+
+    console.log(user.handicap);
 
     res.render('profile', {
       logout: process.env.LOGOUT,
       title: 'Profile',
-      user: JSON.parse(body)
+      user: user,
+      handicap : user.handicap
     });
 
   });

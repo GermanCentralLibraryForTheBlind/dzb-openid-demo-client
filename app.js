@@ -17,15 +17,15 @@ const users = require('./routes/users');
 
 const hostip = 'http://' + ip.address()
 const redirect_uri = hostip + ':4001/oauth/callback';
-process.env.LOGOUT = 'http://dzbvm-badi.dzbnet.local:5555/auth/realms/dzb/protocol/openid-connect/logout?redirect_uri=' + redirect_uri;
+process.env.LOGOUT = 'http://192.168.1.195:5555/auth/realms/dzb/protocol/openid-connect/logout?redirect_uri=' + redirect_uri;
 
 
 const oic = new DZBStrategy({
-    issuerHost: 'http://dzbvm-badi.dzbnet.local:5555/auth/realms/dzb',
+    issuerHost: 'http://192.168.1.195:5555/auth/realms/dzb',
     client_id: 'nextcloud',
     client_secret: '86ed96cb-39d7-46cf-b00e-5e1ff2769011',
     redirect_uri: redirect_uri,
-    scope: 'openid userinfo'
+    scope: 'openid dzb'
 });
 
 

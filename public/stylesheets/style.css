@@ -29,12 +29,16 @@ a {
   font-family: "Braille";
 }
 
-.partially-sighted {
-  background-color: black;
+.partiallysighted {
+  background-color: black!important;
   color: white;
   font-size: xx-large;
 }
 
 .dyslexia {
   font-family: "OpenDyslexic";
+}
+
+.profile {
+  font-size: small;
 }
