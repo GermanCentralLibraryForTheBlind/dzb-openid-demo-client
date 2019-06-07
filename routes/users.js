@@ -7,37 +7,33 @@ var ip = require("ip");
 */
 
 /* GET users listing. */
-router.get('/', function(req, res, next) {
+router.get('/', function (req, res, next) {
 
-  res.render('users', {
-    title: 'User successfully logged in.',
-      username: req.user.data.name,
-      handicap: req.user.data.handicap,
-      logout: process.env.LOGOUT
-  });
+    res.render('users', {
+        title: 'User successfully logged in.',
+        username: req.user.data.name,
+        handicap: req.user.data.handicap,
+        logout: process.env.LOGOUT
+    });
 });
 
 /* GET the profile of the current authenticated user */
-router.get('/profile', function(req, res, next) {
+router.get('/profile', function (req, res, next) {
 
-  request.get('http://192.168.1.195:5555/auth/realms/dzb/protocol/openid-connect/userinfo', {
-    'auth': { 'bearer': req.user.token.access_token }
-  }, (err, respose, body) => {
+    request.get('http://192.168.1.195:5555/auth/realms/dzb/protocol/openid-connect/userinfo', {
+        'auth': {'bearer': req.user.token.access_token}
+    }, (err, respose, body) => {
 
-    console.log('User Info');
-    console.log(body);
-    user = JSON.parse(body);
+        console.log('User Info');
+        console.log(body);
 
-    console.log(user.handicap);
+        res.render('profile', {
+            logout: process.env.LOGOUT,
+            title: 'Profile',
+            user: JSON.parse(body)
+        });
 
-    res.render('profile', {
-      logout: process.env.LOGOUT,
-      title: 'Profile',
-      user: user,
-      handicap : user.handicap
     });
-
-  });
 });
 
 module.exports = router;
